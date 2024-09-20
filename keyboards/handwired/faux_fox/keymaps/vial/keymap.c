@@ -5,10 +5,10 @@
 
 enum {
     LAYER_BASE = 0,
+    LAYER_GAMING,
     LAYER_FN,
     LAYER_ADJUST,
-    LAYER_POINTER,
-    LAYER_GAMING
+    LAYER_POINTER
 };
 
 enum custom_keycodes {
@@ -118,7 +118,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
                                _______, _______, _______,      _______, _______, _______
 
 #define LAYOUT_LAYER_POINTER                                                                                               \
-      _______, XXXXXXX, XXXXXXX, XXXXXXX, DF(LAYER_BASE), DF(LAYER_GAMING),    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOTLOADER, _______, \
+      _______, XXXXXXX, XXXXXXX, XXXXXXX, TO(LAYER_BASE), TO(LAYER_GAMING),    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, QK_BOOTLOADER, _______, \
       _______, KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT,        XXXXXXX,             KC_WH_U, KC_RSFT, KC_RCTL, KC_RALT, KC_RGUI,       _______, \
       _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,        XXXXXXX,             KC_WH_D, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,       _______, \
                                  KC_BTN2, KC_BTN1,        KC_BTN3,             KC_BTN3, KC_BTN1, KC_BTN2                                                                                                                                                          \
@@ -128,8 +128,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [LAYER_BASE] = LAYOUT_wrapper(LAYOUT_LAYER_COLEMAK),
+  [LAYER_GAMING] = LAYOUT_wrapper(LAYOUT_LAYER_QWERTY),
   [LAYER_FN] = LAYOUT_wrapper(LAYOUT_LAYER_FUNCTION),
   [LAYER_ADJUST] = LAYOUT_wrapper(LAYOUT_LAYER_ADJUST),
   [LAYER_POINTER] = LAYOUT_wrapper(LAYOUT_LAYER_POINTER),
-  [LAYER_GAMING] = LAYOUT_wrapper(LAYOUT_LAYER_QWERTY)
 };
