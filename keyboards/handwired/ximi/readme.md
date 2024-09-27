@@ -1,27 +1,40 @@
-# handwired/ximi
+# ximi
 
-![handwired/ximi](imgur.com image replace me!)
-
-_A short description of the keyboard/project_
-
-- Keyboard Maintainer: [Tommaso Visconti](https://github.com/tommyblue)
-- Hardware Supported: _The PCBs, controllers supported_
-- Hardware Availability: _Links to where you can find this hardware_
+* Keyboard Maintainer: sadekbaroudi
+* Hardware Supported: ximi PCB
 
 Make example for this keyboard (after setting up your build environment):
+```
+    make fingerpunch/ximi:default RGB_MATRIX_ENABLE=yes FP_CIRQUE_BOTH=yes HAPTIC_ENABLE=yes
+```
 
-    make handwired/ximi:default
+Options are:
+```
+    RGB_MATRIX_ENABLE=yes
+    RGBLIGHT_ENABLE=yes
+    AUDIO_ENABLE=yes
+    HAPTIC_FEEDBACK=yes
+    ENCODER_ENABLE=yes
+    // for the options below, select only one, or none
+    FP_TRACKBALL_BOTH=yes
+    FP_CIRQUE_BOTH=yes
+    FP_TRACKBALL_LEFT_ONLY=yes
+    FP_TRACKBALL_RIGHT_ONLY=yes
+    FP_CIRQUE_LEFT_ONLY=yes
+    FP_CIRQUE_RIGHT_ONLY=yes
+    FP_TRACKBALL_LEFT_CIRQUE_RIGHT=yes
+    FP_CIRQUE_LEFT_TRACKBALL_RIGHT=yes
+    FP_SPLIT_LEFT=yes     # only applicable if doing a mixed pointing device build (e.g. trackpad left, trackball right)
+    FP_SPLIT_RIGHT=yes     # only applicable if doing a mixed pointing device build (e.g. trackpad left, trackball right)
+```
 
-Flashing example for this keyboard:
+**IMPORTANT NOTES:**
+* Pick one (or none) of FP_TRACKBALL_* or FP_CIRQUE_* only.
+* If you are building a ximi with a trackpad on one side, and a trackball on the other, you will need to build two firmware files. Once with FP_SPLIT_LEFT=yes, and once with FP_SPLIT_RIGHT=yes - then you'll need to unplug the trrs and flash the left firmware on the left half, and the right firmware on the right half
 
-    make handwired/ximi:default:flash
+See [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) then the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information.
 
-See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_tools) and the [make instructions](https://docs.qmk.fm/#/getting_started_make_guide) for more information. Brand new to QMK? Start with our [Complete Newbs Guide](https://docs.qmk.fm/#/newbs).
+## Build Guide
 
-## Bootloader
-
-Enter the bootloader in 3 ways:
-
-- **Bootmagic reset**: Hold down the key at (0,0) in the matrix (usually the top left key or Escape) and plug in the keyboard
-- **Physical reset button**: Briefly press the button on the back of the PCB - some may have pads you must short instead
-- **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available
+See:
+https://github.com/sadekbaroudi/fingerpunch/blob/master/ximi/

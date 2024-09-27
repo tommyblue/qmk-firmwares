@@ -1,33 +1,15 @@
 {
-    "manufacturer": "Tommaso Visconti",
-    "keyboard_name": "Ximi handwired",
-    "maintainer": "tommyblue",
-    "bootloader": "rp2040",
-    "diode_direction": "COL2ROW",
-    "features": {
-        "bootmagic": false,
-        "command": false,
-        "console": true,
-        "extrakey": true,
-        "mousekey": false,
-        "nkro": false
-    },
-    "split": {
-        "transport": {
-            "sync": {
-                "matrix_state": true
-            }
-        }
-    },
-    "processor": "RP2040",
-    "url": "",
-    "usb": {
-        "device_version": "1.0.0",
-        "pid": "0x0001",
-        "vid": "0x4653"
-    },
+    "manufacturer": "sadekbaroudi",
+    "keyboard_name": "ximi",
+    "url": "https://fingerpunch.xyz/product/ximi/",
+    "maintainer": "Sadek Baroudi <sadekbaroudi@gmail.com>",
     "build": {
         "lto": true
+    },
+    "usb": {
+        "vid": "0xFEFE",
+        "pid": "0xB171",
+        "device_version": "1.0.0"
     },
     "layouts": {
         "LAYOUT_split_3x6_3": {
